@@ -151,4 +151,28 @@ public class DrawDemo
 
         polygon(pen, n);
     }
+    
+    /**
+     * Draw an spiral on the screen.
+     */
+    public void drawSpiral()
+    {
+        Pen pen = new Pen(60, 40, myCanvas);
+        pen.setColor(Color.BLACK);
+
+        spiral(pen);
+    }
+    
+    /**
+     * Draw an spiral in the pen's color at the pen's location.
+     */
+    private void spiral(Pen pen)
+    {
+        int x = 300;
+        for (int i=0; i<30; i++) {
+            pen.move(x);
+            pen.turn(90);
+            x -= 10;
+        }
+    }
 }
