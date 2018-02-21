@@ -109,7 +109,7 @@ public class DrawDemo
     }
     
     /**
-     * Draw a triangle in the pen's color at the pen's location.
+     * Draw a pentagon in the pen's color at the pen's location.
      */
     private void pentagon(Pen pen)
     {
@@ -120,13 +120,35 @@ public class DrawDemo
     }
     
     /**
-     * Draw a triangle on the screen.
+     * Draw a pentagon on the screen.
      */
-    public void drawPentagon(int x, int y)
+    public void drawPolygon(int x, int y)
     {
         Pen pen = new Pen(x, y, myCanvas);
         pen.setColor(Color.GREEN);
 
         pentagon(pen);
+    }
+    
+    /**
+     * Draw a polygon in the pen's color at the pen's location.
+     */
+    private void polygon(Pen pen, int n)
+    {
+        for (int i=0; i<n; i++) {
+            pen.move(100);
+            pen.turn(360/n);
+        }
+    }
+    
+    /**
+     * Draw a polygon on the screen.
+     */
+    public void drawPolygon(int x, int y, int n)
+    {
+        Pen pen = new Pen(x, y, myCanvas);
+        pen.setColor(Color.GREEN);
+
+        polygon(pen, n);
     }
 }
