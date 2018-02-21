@@ -107,4 +107,26 @@ public class DrawDemo
 
         triangle(pen);
     }
+    
+    /**
+     * Draw a triangle in the pen's color at the pen's location.
+     */
+    private void pentagon(Pen pen)
+    {
+        for (int i=0; i<5; i++) {
+            pen.move(100);
+            pen.turn(72);
+        }
+    }
+    
+    /**
+     * Draw a triangle on the screen.
+     */
+    public void drawPentagon(int x, int y)
+    {
+        Pen pen = new Pen(x, y, myCanvas);
+        pen.setColor(Color.GREEN);
+
+        pentagon(pen);
+    }
 }
